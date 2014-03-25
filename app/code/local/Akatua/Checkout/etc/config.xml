@@ -1,0 +1,73 @@
+<?xml version="1.0"?>
+
+<config>
+    <modules>
+        <Akatua_Checkout>
+            <version>1.0.0</version>
+        </Akatua_Checkout>
+    </modules>
+
+    <global>
+        <models>
+            <Akatua>
+                <class>Akatua_Checkout_Model</class>
+            </Akatua>
+        </models>
+        <blocks>
+            <Akatua>
+                <class>Akatua_Checkout_Block</class>
+            </Akatua>
+        </blocks>
+        <resources>
+            <Akatua_setup>
+                <setup>
+                    <module>Akatua_Checkout</module>
+                </setup>
+                <connection>
+                    <use>core_setup</use>
+                </connection>
+            </Akatua_setup>
+            <Akatua_write>
+                <connection>
+                    <use>core_write</use>
+                </connection>
+            </Akatua_write>
+            <Akatua_read>
+                <connection>
+                    <use>core_read</use>
+                </connection>
+            </Akatua_read>
+        </resources>
+        <helpers>
+            <Akatua>
+                <class>Akatua_Checkout_Helper</class>
+            </Akatua>
+        </helpers>
+    </global>
+
+    <frontend>
+        <secure_url>
+            <Akatua_redirect>/Akatua/redirect/00</Akatua_redirect>
+        </secure_url>
+        <routers>
+            <Akatua>
+                <use>standard</use>
+                <args>
+                    <module>Akatua_Checkout</module>
+                    <frontName>Akatua</frontName>
+                </args>
+            </Akatua>
+        </routers>
+    </frontend>
+
+    <default>
+        <payment>
+            <Akatua>
+                <active>0</active>
+                <model>Akatua/Redirect</model>
+                <title>Akatua</title>
+                <test_mode>1</test_mode>
+            </Akatua>
+        </payment>
+    </default>
+</config>

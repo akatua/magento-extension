@@ -1,0 +1,14 @@
+<?xml version="1.0"?>
+<config>
+    <modules>
+        <Akatua_Checkout>
+            <active>true</active>
+            <codePool>local</codePool>
+            <depends>
+                <Mage_Paygate/>
+                <Mage_Checkout/>
+                <Mage_Sales/>
+            </depends>
+        </Akatua_Checkout>
+    </modules>
+</config>
